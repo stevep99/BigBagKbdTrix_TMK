@@ -1,7 +1,7 @@
 DreymaR's Big Bag of Keyboard Tricks
 ====================================
 
-For TMK compatible keyboard controllers/converters such as the USB-2-USB converter, using Hasu's TMK
+### For TMK compatible keyboard controllers/converters such as the USB-2-USB converter, using Hasu's TMK
 
 * "Extend" layers using Caps Lock as a modifier for navigation/editing from the home position and more
 * Angle/Wide ergo modifications to improve wrist angles, hand spacing and right pinky stretch/load effort

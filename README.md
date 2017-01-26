@@ -14,7 +14,8 @@ More info
 
 * Run the enclosed MakeFlash script with -h for more help and info.
 * The MakeFlash script can install the needed AVR tools for Linux, and Git plus the TMK repository before building/flashing.
-* If you already have TMK, dreymar_tmk (or its content) should be placed within or beside the tmk_keyboard dir.
+* If you already have TMK, dreymar_tmk should be placed within or beside the tmk_keyboard dir.
+* Alternatively, the contents of my repo could be placed directly in the tmk_keyboard dir.
 * There's a hexfile folder with precompiled .hex binaries, mostly for the USB-2-USB converter; new backups may also go there.
 * There's a unimaps folder with universal keymaps for all controllers. That's what I'm using these days.
 * The install switches (-a and -g) can also update existing tools/TMK.
@@ -25,6 +26,8 @@ Links
 
 See the [DREYMAR'S Big Bag (USB-2-USB) topic on the Colemak Forums](http://forum.colemak.com/viewtopic.php?id=2158) (http://forum.colemak.com).
 There are plenty of explanations and further links in there.
+
+Also, obviously the [main TMK GitHub repo](https://github.com/tmk/tmk_keyboard).
 
 Happy TMK hacking!
 DreymaR, 2017-01

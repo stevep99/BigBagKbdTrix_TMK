@@ -41,7 +41,7 @@ KeyMap='dreymar'                  # (--) Layout file to use, "keymap_${KeyMap}.c
 ## NOTE: To use the keymap.c file with this script, copy/rename it to, e.g., keymap_all.c first
 
 HelpStr="\e[1mUsage: bash ${MyNAME} [optional args] <keymap file>\e[0m\n"\
-"       Runs from within the tmk_keyboard dir or dreymar_tmk beside it.\n"\
+"       Runs from within the tmk_keyboard dir or a dir beside it.\n"\
 "==============================================================\n"\
 "[-#] Functionality                   - 'default'  \n"\
 "==============================================================\n"\
@@ -169,7 +169,7 @@ if [ ${InsAVR} == 'yes' ]; then
 fi
 
 ## NOTE: The makeflash script should be placed either within the main tmk_keyboard dir,
-##       or in the dreymar_tmk dir located within or beside the main tmk dir.
+##       or in a dir located within or beside the main tmk dir.
 ##       The _myhexfiles and _myunimaps dirs should be beside the script.
 
 cd "${MyPATH}"    # Start out in the script's dir no matter where it's run from

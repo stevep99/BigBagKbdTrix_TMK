@@ -36,7 +36,7 @@ InsAVR='no'                       # (-a) Install required AVR tools, then quit?
 InsTMK='no'                       # (-g) Install TMK_keyboard from GitHub, then quit?
 MyChipDef='atmega32u4'            # (-n) Device name (for DFU-programmer only; may be detected instead)
 TargetDef='tmk_makeflash'         # (-t) Name of resulting .hex file (may be detected in the Makefile)
-KeyMap='dreymar'                  # (--) Layout file to use, "keymap_${KeyMap}.c"
+KeyMap='steve'                    # (--) Layout file to use, "keymap_${KeyMap}.c"
 ## NOTE: '# (-a)' means that the value can be set by option argument '-a <value>'
 ## NOTE: To use the keymap.c file with this script, copy/rename it to, e.g., keymap_all.c first
 
@@ -309,9 +309,9 @@ if [ ${RunDFU} == 'yes' ]; then
     ## The dfu-programmer command has slightly different syntax depending on version
     [[ `dfu-programmer --version 2>&1 | awk '{print $2}'` > '0.7' ]] \
         && UseForce='--force' || UseForce=''
-        dfu-programmer $MyChip erase $UseForce    || MyError "$MyChip init/erase failed"
-    dfu-programmer $MyChip flash "${Target}.hex"    || MyError "$MyChip flashing failed"
-    dfu-programmer $MyChip reset \
+    sudo dfu-programmer $MyChip erase $UseForce    || MyError "$MyChip init/erase failed"
+    sudo dfu-programmer $MyChip flash "${Target}.hex"    || MyError "$MyChip flashing failed"
+    sudo dfu-programmer $MyChip reset \
         && MyPoint "DFU flashing ${MyChip} done" || MyError "${MyChip} reset failed"
 fi
 

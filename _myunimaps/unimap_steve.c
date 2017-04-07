@@ -96,13 +96,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #define DREYMARHACK 0
 
-/* The STEVEHACK constant chooses Steve's backspace -> Shift mapping (for Ergo Pro)
- * 0  : Normal behavior is the default
- * 1  : Backspace remapping active 
- */
-#define STEVEHACK 1
-
-
 /* Define the keymap type used in the header file (affects includes, map array format and Fn key definitions):
  * UNIMAP (new universal 128-key format w/o the Korean and rare rightmost keys)
  * KEYMAP_ALL (or similar keymaps); NOTE: For this to work, use my keymap_dreymar_old files (may be outdated)!
@@ -217,7 +210,7 @@ enum macro_id {
 #endif /* if USEUNIMAP */
 
     /* Layer 0: Default Layout --> */
-    [0] = UNIMAP_AWIDEISO(
+    [0] = UNIMAP_ANGLEISO_STEVE(
     /* Layout independent top row(s) - except for mirrored Colemak (layout #6) which moves the F# key row */
 #if ACTIVELAYOUT == 6
 #else
@@ -364,12 +357,7 @@ enum macro_id {
 
 #elif ACTIVELAYOUT == 5
     /* Colemak */
-#if STEVEHACK == 1
-    GRV ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 ,  0 ,FMin,EQL ,JYEN,LSFT,   INS ,HOME,PGUP,   NLCK,PSLS,PAST,PMNS,
-#else
     GRV ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 ,  0 ,FMin,EQL ,JYEN,BSPC,   INS ,HOME,PGUP,   NLCK,PSLS,PAST,PMNS,
-#endif
-
 # if CURLMOD == 1
     /* Colemak-Curl(DbgHk). Use with an Angle or Angle(Wide) ergo mod; see the INIT section!
      * http://forum.colemak.com/viewtopic.php?id=1438
@@ -399,7 +387,7 @@ enum macro_id {
 # elif CURLMOD == 2
     /* Colemak-Curl(DvbgHm - SteveP99's "Mod-DH" variant). Use with an Angle(Wide) ergo mod! */
     FTab  ,  Q ,  W ,  F ,  P ,  B ,  J ,  L ,  U ,  Y ,FSCl,LBRC,FRBr,   BSLS,   DEL ,END ,PGDN,    P7 , P8 , P9 ,PPLS,
-    BSPC   ,  A ,  R ,  S ,  T ,  G ,  M ,  N ,  E ,  I ,  O ,FQuo,FHsh,  ENT ,                      P4 , P5 , P6 ,PCMM,
+    FCap   ,  A ,  R ,  S ,  T ,  G ,  M ,  N ,  E ,  I ,  O ,FQuo,FHsh,  ENT ,                      P4 , P5 , P6 ,PCMM,
     LSFT ,FLGt,  Z ,  X ,  C ,  D ,  V ,  K ,  H ,COMM,DOT ,FSls, RO ,    RSFT,         UP ,         P1 , P2 , P3 ,PENT,
 # else
     /* Standard Colemak
@@ -485,11 +473,11 @@ enum macro_id {
 
 #endif /* if ACTIVELAYOUT */
     /* The bottom row is layout independent (but you may edit for instance the Fn keys as desired) */
-    LCTL ,FnLA,FCap,MHEN,         SPC          ,HENK,KANA,FnRA,RGUI,LGUI , RCTL,   LEFT,DOWN,RGHT,    P0      ,PDOT,PEQL 
+    LCTL ,LGUI,FnLA,MHEN,         SPC          ,HENK,KANA,FnRA,RGUI,APP , RCTL,   LEFT,DOWN,RGHT,    P0      ,PDOT,PEQL 
     ),    /* <-- Layer 0: Default Layout */
 
 /* Layer 1: Second/Switch Layout [NOTE: Replace all the #if stuff with one of the Layer0 layouts if desired!] --> */
-    [1] = UNIMAP_AWIDEISO(
+    [1] = UNIMAP_ANGLEISO_STEVE(
 /* REPLACE SECOND LAYOUT BETWEEN THESE LINES AS NEEDED (taking care to include all necessary lines once!) --> */
 /*    ESC ,     F1 , F2 , F3 , F4 ,    F5 , F6 , F7 , F8 ,    F9 ,F10 ,F11 ,F12 ,   PSCR,FSLk,FPau,        VOLD,VOLU,MUTE,
  *    GRV ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 ,  0 ,LBRC,FRBr,JYEN,BSPC,   INS ,HOME,PGUP,   NLCK,PSLS,PAST,PMNS,
@@ -592,13 +580,13 @@ enum macro_id {
  * |      |     |Ext1 |           Return            |     |     |     |      |
  * `-------------------------------------------------------------------------' */
 /*            ACL0,ACL1,ACL2,BTN4,BTN5, NO , NO ,WAKE, NO , NO , NO , NO , */
-    [3] = UNIMAP_AWIDEISO(
+    [3] = UNIMAP_ANGLEISO_STEVE(
     CAPS,    MPLY,MPRV,MNXT,MSTP,   MUTE,VOLD,VOLU,MSEL,   WHOM,WSCH,MYCM,CALC,   PSCR,FSLk,FPau,        VOLD,VOLU,MUTE,
     FnU1, F1 , F2 , F3 , F4 , F5 , F6 , F7 , F8 , F9 ,F10 ,F11 ,F12 ,JYEN,PAUS,   INS ,HOME,PGUP,   NLCK,PSLS,PAST,PMNS,
-    TAB   ,ESC ,WBAK,FCtF,WFWD,BTN1,PGUP,HOME, UP ,END , APP,ESC ,INS ,   APP ,   DEL ,END ,PGDN,    P7 , P8 , P9 ,PPLS,
-    BSPC   ,FCtA,TAB,LSFT,LCTL,BTN2,PGDN,LEFT,DOWN,RGHT,DEL,CAPS ,WFAV,  PSCR,                      P4 , P5 , P6 ,PCMM,
-    LSFT ,WH_L,FCtZ,FCtX,FCtC,FCtV,FCtV,PGDN,BSPC,MS_L,MS_R,WH_R, RO ,    RSFT,         UP ,         P1 , P2 , P3 ,PENT,
-    LCTL ,FnLA,FCap,MHEN,         SPC          ,HENK,KANA,FnRA,RGUI,LGUI , RCTL,   LEFT,DOWN,RGHT,    P0      ,PDOT,PEQL 
+    TAB   ,ESC ,WBAK,FCtF,WFWD,BTN1,PGUP,HOME, UP ,END ,CAPS,ESC ,INS ,   APP ,   DEL ,END ,PGDN,    P7 , P8 , P9 ,PPLS,
+    FCap   ,FCtA,TAB,LSFT,LCTL,BTN2,PGDN,LEFT,DOWN,RGHT,DEL ,APP ,WFAV,  PSCR,                      P4 , P5 , P6 ,PCMM,
+    LSFT ,WH_L,FCtZ,FCtX,FCtC,FCtV,FCtV,PGDN,BSPC,F13 ,F14 ,F15 , RO ,    RSFT,         UP ,         P1 , P2 , P3 ,PENT,
+    LCTL ,LGUI,FnLA,MHEN,         ENT          ,HENK,KANA,FnRA,RGUI,APP , RCTL,   LEFT,DOWN,RGHT,    P0      ,PDOT,PEQL 
     ),    /* <-- Extend1 */
 
 /* Layer 2: Extend2 (DreymaR)                                                  */
@@ -616,7 +604,7 @@ enum macro_id {
  * |-------------------------------------------------------------------------|
  * |      |     |     |                             |Ext2 |     |     |      |
  * `-------------------------------------------------------------------------' */
-    [2] = UNIMAP_AWIDEISO(
+    [2] = UNIMAP_ANGLEISO_STEVE(
     CAPS,    MPLY,MRWD,MFFD,EJCT,   WREF, NO , NO ,SLEP,   WSTP,MAIL,MYCM,CALC,   PSCR,FSLk,FPau,        VOLD,VOLU,MUTE,
     FnU2,FSh1,FSh2,FSh3,FSh4,FSh5,FSh6, P7 , P8 , P9 ,PAST,PMNS,TRNS,JYEN,BSPC,   INS ,HOME,PGUP,   NLCK,PSLS,PAST,PMNS,
     FTab  ,HOME, UP ,END ,DEL ,ESC ,PGUP, P4 , P5 , P6 ,PPLS,FSh9,FSh0,   BSLS,   DEL ,END ,PGDN,    P7 , P8 , P9 ,PPLS,

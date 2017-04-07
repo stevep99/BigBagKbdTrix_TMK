@@ -239,4 +239,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * DONE: In 2016-10, Hasu switched KP Enter and KP Equals (the equals is now below Enter) for Unimap.
  */
 
+
+
+#define UNIMAP_ANGLEISO_STEVE( \
+    ESC_,    FK01,FK02,FK03,FK04,   FK05,FK06,FK07,FK08,   FK09,FK10,FK11,FK12,   PRSC,SCLK,PAUS,        VOLD,VOLU,MUTE,  \
+    TLDE,N1_1,N2_2,N3_3,N4_4,N5_5,N6_6,N7_7,N8_8,N9_9,NA_0,NBMN,NCEQ,JYEN,BKSP,   INS_,HOME,PGUP,   NMLK,KPDV,KPMU,KPMN,  \
+    TAB_  ,U1_Q,U2_W,U3_E,U4_R,U5_T,U6_Y,U7_U,U8_I,U9_O,UA_P,UBLB,UCRB,   BKSL,   DEL_,END_,PGDN,   KP_7,KP_8,KP_9,KPAD,  \
+    CAPS   ,H1_A,H2_S,H3_D,H4_F,H5_G,H6_H,H7_J,H8_K,H9_L,HASC,HBQU,HCHS,  RTRN,                     KP_4,KP_5,KP_6,KPCM,  \
+    LSFT ,LSGT,L1_Z,L2_X,L3_C,L4_V,L5_B,L6_N,L7_M,L8CM,L9DT,LASL,JROM,    RSFT,        _UP_,        KP_1,KP_2,KP_3,KPEN,  \
+    LCTL ,LWIN,LALT,JMHE,         SPCE         ,JHEN,JKAN,RALT,RWIN,MENU, RCTL,   LEFT,DOWN,RGHT,   KP_0     ,KPDT,KPEQ   \
+) UNIMAP( \
+             F13 ,F14 ,F15 ,F16 ,   F17 ,F18 ,F19 ,F20 ,   F21 ,F22 ,F23 ,F24 ,                                           \
+    ESC_,    FK01,FK02,FK03,FK04,   FK05,FK06,FK07,FK08,   FK09,FK10,FK11,FK12,   PRSC,SCLK,PAUS,        VOLD,VOLU,MUTE,  \
+    TLDE,N1_1,N2_2,N3_3,N4_4,N5_5,N6_6,N7_7,N8_8,N9_9,NA_0,NBMN,NCEQ,JYEN,BKSP,   INS_,HOME,PGUP,   NMLK,KPDV,KPMU,KPMN,  \
+    TAB_  ,U1_Q,U2_W,U3_E,U4_R,U5_T,U6_Y,U7_U,U8_I,U9_O,UA_P,UBLB,UCRB,   BKSL,   DEL_,END_,PGDN,   KP_7,KP_8,KP_9,KPAD,  \
+    BKSP   ,H1_A,H2_S,H3_D,H4_F,H5_G,H6_H,H7_J,H8_K,H9_L,HASC,HBQU,HCHS,  RTRN,                     KP_4,KP_5,KP_6,KPCM,  \
+    LSFT ,L1_Z,L2_X,L3_C,L4_V,L5_B,LSGT,L6_N,L7_M,L8CM,L9DT,LASL,JROM,    RALT,        _UP_,        KP_1,KP_2,KP_3,KPEN,  \
+    LCTL ,LALT,CAPS,JMHE,         SPCE         ,JHEN,JKAN,RSFT,RWIN,MENU, RCTL,   LEFT,DOWN,RGHT,   KP_0     ,KPDT,KPEQ   \
+)
 #endif
